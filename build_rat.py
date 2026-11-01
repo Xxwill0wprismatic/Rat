@@ -5,10 +5,10 @@ import shutil
 import subprocess
 
 def build_rat() -> bool:
-    print("SHADOW RAT Builder")
+    print("Rat")
     print("=" * 50)
     
-    main_script: str = "shadow_rat.py"
+    main_script: str = "rat.py"
     
     if not os.path.exists(main_script):
         print(f"Error: {main_script} not found in current directory")
@@ -71,16 +71,16 @@ def build_rat() -> bool:
     result = subprocess.run(cmd)
     
     if result.returncode == 0:
-        print("\nBuild successful!")
-        exe_path: str = os.path.join("dist", "SHADOW_RAT.exe")
+        print("\n bro Build successful!")
+        exe_path: str = os.path.join("dist", "Rat.exe")
         if os.path.exists(exe_path):
             print(f"Executable created at: {exe_path}")
             print(f"Size: {os.path.getsize(exe_path) / 1024 / 1024:.2f} MB")
             
             copy: str = input("\nCopy to current directory? (y/n): ").lower()
             if copy == 'y':
-                shutil.copy(exe_path, "SHADOW_RAT.exe")
-                print("Copied to: SHADOW_RAT.exe")
+                shutil.copy(exe_path, "Rat.exe")
+                print("Copied to: Rat.exe")
         return True
     else:
         print("\nBuild failed!")
